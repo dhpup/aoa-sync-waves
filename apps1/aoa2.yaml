@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps2
+spec:
+  project: aoa-sync-waves
+  syncPolicy:
+    automated: {}
+  source:
+    repoURL: https://github.com/dhpup/aoa-sync-waves.git
+    targetRevision: main
+    path: apps2
+    directory:
+      recurse: true
+  destination:
+    name: in-cluster
+    namespace: argocd

@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: service1
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+spec:
+  project: aoa-sync-waves
+  source:
+    repoURL: 'https://github.com/dhpup/aoa-sync-waves'
+    path: config/service1
+    targetRevision: HEAD
+  destination:
+    namespace: service1
+    name: 'mac2'
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
