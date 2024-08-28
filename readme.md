@@ -2,6 +2,8 @@ Healthcheck will need to be added in Resource Customizations for App of Apps lev
 
 Group/Kind=argoproj.io/Application
 Healthcheck=
+```
+{
         hs = {}
         hs.status = "Progressing"
         hs.message = ""
@@ -14,3 +16,5 @@ Healthcheck=
           end
         end
         return hs
+}
+```
