@@ -1,6 +1,7 @@
 Healthcheck will need to be added in Resource Customizations for App of Apps level sync waves to work. 
 
 Group/Kind=argoproj.io/Application
+\
 Healthcheck=
 ```
 {
