@@ -29,5 +29,5 @@ spec:
         targetRevision: HEAD
         path: config/service2
       destination:
-        server: 'mac2'
+        name: 'mac2'
         namespace: service2
