@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: service2appset
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - list:
+      elements:
+      - number: 1
+      - number: 2
+      - number: 3
+      - number: 4
+      - number: 5
+      - number: 6
+      - number: 7
+      - number: 8
+      - number: 9
+      - number: 10
+      - number: 11
+  template:
+    metadata:
+      name: 'service2-{{.number}}'
+    spec:
+      project: aoa-sync-waves
+      source:
+        repoURL: https://github.com/dhpup/aoa-sync-waves
+        targetRevision: HEAD
+        path: config/service2
+      destination:
+        server: 'mac2'
+        namespace: service2
